@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    
+}
+
+body{
+    background-color: $main-background;
+    display: flex;
+    flex-direction: column;
+    //height: 100vh;
+    align-items: center;
+    justify-content: center;
+    //margin-top: 2rem;
+}
+
+.container{
+    //@debug: 375px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 375px;
+    background-color: $accent;
+    img{
+        display: block;
+        width: 100%;
+        min-height: cover;
+        mix-blend-mode: multiply;
+        opacity: 0.8;
+    }
+
+}
+
+main{
+    background-color: $card-background;
+    color:$main-heading-stats;
+    text-align: center;
+    padding: 3rem 3rem;
+    width: 375px;
+    //margin-bottom: 3rem;
+
+    h1{
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 1.5rem;
+    }
+
+    span{
+        color:$accent;
+        font-size: 2rem;
+    }
+
+    p{
+        //font-family:'Lexend Deca', sans-serif;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        color:$main-paragraph;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+    }
+}
+#stats{
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-item{
+    
+    &:not(:last-child){
+        margin-bottom: 3rem;
+
+    }
+
+    h2{
+        font-size: 1.5rem;
+        font-weight: 700;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    p{
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        color:$main-paragraph;
+        line-height: 1.8;
+        margin:0;
+    }
+}
+
+@media (min-width:1000px)
+{
+    body{
+        height: 100vh;
+    }
+    header{
+        img{
+            height: 100%;
+            max-width:100%;
+        }
+    }
+    .container{
+        flex-direction: row-reverse;
+    }
+    #stats{
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+    }
+    main{
+        width: 450px;
+        text-align: start;
+
+        p{
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+    }
+}
